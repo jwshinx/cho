@@ -1,5 +1,6 @@
 require "rubygems"
 require "sinatra/base"
+require 'haml'
 
 class Cho < Sinatra::Base
 
@@ -14,4 +15,15 @@ class Cho < Sinatra::Base
   get '/history' do
     'History Channel'
   end
+
+  get '/dots' do
+    #haml :index, :layout => :dot
+    @color = 'orange'
+    haml '%div= @color'
+  end
+
+  get '/dots/:id' do
+
+  end
 end
+
